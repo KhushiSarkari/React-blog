@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import axios from "axios";
 
 class AllBlogs extends Component {
     state = {
-        posts: [
-            {
-                id: 1,
-                title: 'Lorem ipsum',
-                content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, numquam? Fuga, quas ullam ex pariatur, hic unde debitis corrupti minima ratione odit vitae incidunt ea sint sunt at numquam laudantium!'
+        posts: []
+    }
+    componentDidMount = () => {
+        axios.get('https://blog-faf3e.firebaseio.com/posts.json').then(res => {
+            let posts = [];
+            for (let key in res.data) {
+                res.data[key].id = key;
+                posts.push(res.data[key]);
             }
-        ]
+            this.setState({
+                posts
+            });
+
+        });
     }
     render() {
         return (
