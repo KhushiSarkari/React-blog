@@ -25,8 +25,7 @@ class Blog extends Component {
                                 <div className="card-content teal-text text-darken-4">
                                     <article>{this.state.post.content}</article>
                                     <p>Author: {this.state.post.author}</p>
-                                    <p>Categories:</p>
-                                    <ul>
+                                    <ul>Categories:
                                         {
                                             this.state.post.categories.map(category => {
                                                 return (<li> {category}</li>)

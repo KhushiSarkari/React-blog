@@ -14,7 +14,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={AllBlogs} />
             <Route path='/add' component={AddBlog} />
-            <Route path='/:blog_id' component={Blog} />
+            <Route path='/blog/:blog_id' component={Blog} />
           </Switch>
         </div>
       </BrowserRouter>
