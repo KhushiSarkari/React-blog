@@ -38,7 +38,9 @@ class Blog extends Component {
                         </div>
 
                     ) : (
-                            <div className="center">Loading post...</div>
+                            <div className="progress">
+                                <div className="indeterminate"></div>
+                            </div>
                         )
                 }
 
